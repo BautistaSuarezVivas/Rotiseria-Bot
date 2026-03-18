@@ -1,6 +1,7 @@
 package com.rotiseria.chatbot.model.enums;
 
 public enum EstadoPedido {
+	
     PENDIENTE,    // Recién creado por el bot
     CONFIRMADO,   // Cliente confirmó
     EN_COCINA,    // El negocio lo tomó
