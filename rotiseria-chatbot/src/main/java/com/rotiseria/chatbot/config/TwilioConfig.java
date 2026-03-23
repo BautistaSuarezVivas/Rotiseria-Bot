@@ -20,6 +20,7 @@ public class TwilioConfig {
     private String whatsappNumber;
 
     // Se ejecuta una sola vez al levantar el contexto de Spring
+    
     @PostConstruct
     public void initTwilio() {
         Twilio.init(accountSid, authToken);
