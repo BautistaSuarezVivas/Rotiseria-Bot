@@ -1,5 +1,0 @@
-package com.rotiseria.chatbot.repository;
-
-public interface ClienteRepository {
-
-}
