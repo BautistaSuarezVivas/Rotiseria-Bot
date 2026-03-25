@@ -1,0 +1,59 @@
+package com.rotiseria.chatbot.model;
+
+import jakarta.persistence.*;
+import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+
+import java.math.BigDecimal;
+import java.time.OffsetDateTime;
+
+@Entity
+@Table(name = "producto")
+@Getter
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class Producto {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "nombre", nullable = false, length = 100)
+    private String nombre;
+
+    @Column(name = "descripcion", columnDefinition = "TEXT")
+    private String descripcion;
+
+    @Column(name = "precio", nullable = false, precision = 10, scale = 2)
+    private BigDecimal precio;
+
+    @Builder.Default
+    @Column(name = "disponible", nullable = false)
+    private Boolean disponible = true;
+
+    @Builder.Default
+    @Column(name = "categoria", nullable = false, length = 50)
+    private String categoria = "GENERAL";
+
+    @Builder.Default
+    @Column(name = "orden_menu", nullable = false)
+    private Integer ordenMenu = 0;
+
+    @CreationTimestamp
+    @Column(name = "creado_en", nullable = false, updatable = false)
+    private OffsetDateTime creadoEn;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Producto p)) return false;
+        return id != null && id.equals(p.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
+    }
+}
