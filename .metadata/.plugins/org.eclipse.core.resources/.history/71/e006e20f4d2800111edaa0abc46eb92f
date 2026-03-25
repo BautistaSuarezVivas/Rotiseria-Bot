@@ -1,0 +1,5 @@
+package com.rotiseria.chatbot.repository;
+
+public interface ProductoRepository {
+
+}

@@ -1,0 +1,5 @@
+package com.rotiseria.chatbot.model;
+
+public class Pedido {
+
+}

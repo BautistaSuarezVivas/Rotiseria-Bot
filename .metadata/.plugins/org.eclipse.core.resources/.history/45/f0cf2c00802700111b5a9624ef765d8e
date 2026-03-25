@@ -1,0 +1,30 @@
+€# Servidor”€
+server.port=8080
+”€
+# Base de datos PostgreSQL”€
+spring.datasource.url=jdbc:postgresql://localhost:5432/rotiseria_chatbot
+spring.datasource.username=${DB_USERNAME:postgres}
+spring.datasource.password=${DB_PASSWORD:postgres}
+spring.datasource.driver-class-name=org.postgresql.Driver
+”€
+# JPA / Hibernate”€
+
+spring.jpa.hibernate.ddl-auto=validate
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+”€
+# Flyway (migraciones de BD)”€
+spring.flyway.enabled=true
+spring.flyway.locations=classpath:db/migration
+”€
+# Twilio”€
+#twilio.account-sid=${TWILIO_ACCOUNT_SID}
+#twilio.auth-token=${TWILIO_AUTH_TOKEN}
+#twilio.whatsapp-number=${TWILIO_WHATSAPP_NUMBER:whatsapp:+14155238886}
+
+
+”€
+#app.pedido.tiempo-base-minutos=10
+#app.pedido.tiempo-por-item-minutos=5
+#app.pedido.tiempo-maximo-minutos=45
